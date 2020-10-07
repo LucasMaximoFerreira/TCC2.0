@@ -8,6 +8,7 @@ import android.widget.Toast;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -78,10 +79,12 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
             e.printStackTrace();
         }
     }
-    public conectarBD(Context tela){
+
+    public conectarBD(Context tela) {
         super();
         this.tela = tela;
     }
+
     @Override
     protected Boolean doInBackground(Integer... integers) {
         Boolean resp = null;
@@ -93,6 +96,9 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
         switch (op){
             case 0:
                 resp = inserir();
+                break;
+            case 1:
+                resp = logar();
                 break;
         }
 
@@ -119,7 +125,6 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
                     Toast.makeText(tela, "erro", Toast.LENGTH_SHORT).show();
                 }
                 break;
-
             case 1:
                 if (aBoolean == false) {
                     Toast.makeText(tela, "usuario nao cadastrado", Toast.LENGTH_SHORT).show();
@@ -169,5 +174,27 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
 
 
     }
+    private Boolean logar(){
+        try{
 
+            String sql = "select * from cadastro_cliente where cpf_cli=? and senha_cli=?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setString(1, classeCli.getCpf_cli());
+            comando.setString(2, classeCli.getSenha_cli());
+            ResultSet tabelamemoria = comando.executeQuery();
+
+            if (tabelamemoria.next()) {
+                login = true;
+                return true;
+            } else {
+                login = false;
+                return false;
+            }
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
 }

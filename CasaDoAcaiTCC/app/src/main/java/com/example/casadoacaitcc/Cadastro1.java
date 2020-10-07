@@ -35,10 +35,10 @@ public class Cadastro1 extends AppCompatActivity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.btnCad1:
 
-                utilsCadastro_cliente.setNome_cli(txtNome.getText().toString());
-                utilsCadastro_cliente.setSenha_cli(txtSenha.getText().toString());
-                utilsCadastro_cliente.setEmail_cli(txtEmail.getText().toString());
-                utilsCadastro_cliente.setDtnasc_cli(txtData.getText().toString());
+                utilsCadastro_cliente.setUnome_cli(txtNome.getText().toString());
+                utilsCadastro_cliente.setUsenha_cli(txtSenha.getText().toString());
+                utilsCadastro_cliente.setUemail_cli(txtEmail.getText().toString());
+                utilsCadastro_cliente.setUdtnasc_cli(txtData.getText().toString());
 
 
                 Intent telaCad2 = new Intent(this, Cadastro2.class);

@@ -2,103 +2,104 @@ package utils;
 
 abstract public class utilsCadastro_cliente {
 
-     static int id_cli;
-     static String nome_cli;
-     static String senha_cli;
-     static String cpf_cli;
-     static String tel_cli;
-     static String cep_cli;
-     static String num_cli;
-     static String comp_cli;
-     static String email_cli;
-     static String dtnasc_cli;
-     static String gen_cli;
+     private static int uid_cli;
+     private static String unome_cli;
+     private static String usenha_cli;
+     private static String ucpf_cli;
+     private static String utel_cli;
+     private static String ucep_cli;
+     private static String unum_cli;
+     private static String ucomp_cli;
+     private static String uemail_cli;
+     private static String udtnasc_cli;
+     private static String ugen_cli;
 
-    public static int getId_cli() {
-        return id_cli;
+
+    public static int getUid_cli() {
+        return uid_cli;
     }
 
-    public static void setId_cli(int id_cli) {
-        utilsCadastro_cliente.id_cli = id_cli;
+    public static void setUid_cli(int uid_cli) {
+        utilsCadastro_cliente.uid_cli = uid_cli;
     }
 
-    public static String getNome_cli() {
-        return nome_cli;
+    public static String getUnome_cli() {
+        return unome_cli;
     }
 
-    public static void setNome_cli(String nome_cli) {
-        utilsCadastro_cliente.nome_cli = nome_cli;
+    public static void setUnome_cli(String unome_cli) {
+        utilsCadastro_cliente.unome_cli = unome_cli;
     }
 
-    public static String getSenha_cli() {
-        return senha_cli;
+    public static String getUsenha_cli() {
+        return usenha_cli;
     }
 
-    public static void setSenha_cli(String senha_cli) {
-        utilsCadastro_cliente.senha_cli = senha_cli;
+    public static void setUsenha_cli(String usenha_cli) {
+        utilsCadastro_cliente.usenha_cli = usenha_cli;
     }
 
-    public static String getCpf_cli() {
-        return cpf_cli;
+    public static String getUcpf_cli() {
+        return ucpf_cli;
     }
 
-    public static void setCpf_cli(String cpf_cli) {
-        utilsCadastro_cliente.cpf_cli = cpf_cli;
+    public static void setUcpf_cli(String ucpf_cli) {
+        utilsCadastro_cliente.ucpf_cli = ucpf_cli;
     }
 
-    public static String getTel_cli() {
-        return tel_cli;
+    public static String getUtel_cli() {
+        return utel_cli;
     }
 
-    public static void setTel_cli(String tel_cli) {
-        utilsCadastro_cliente.tel_cli = tel_cli;
+    public static void setUtel_cli(String utel_cli) {
+        utilsCadastro_cliente.utel_cli = utel_cli;
     }
 
-    public static String getCep_cli() {
-        return cep_cli;
+    public static String getUcep_cli() {
+        return ucep_cli;
     }
 
-    public static void setCep_cli(String cep_cli) {
-        utilsCadastro_cliente.cep_cli = cep_cli;
+    public static void setUcep_cli(String ucep_cli) {
+        utilsCadastro_cliente.ucep_cli = ucep_cli;
     }
 
-    public static String getNum_cli() {
-        return num_cli;
+    public static String getUnum_cli() {
+        return unum_cli;
     }
 
-    public static void setNum_cli(String num_cli) {
-        utilsCadastro_cliente.num_cli = num_cli;
+    public static void setUnum_cli(String unum_cli) {
+        utilsCadastro_cliente.unum_cli = unum_cli;
     }
 
-    public static String getComp_cli() {
-        return comp_cli;
+    public static String getUcomp_cli() {
+        return ucomp_cli;
     }
 
-    public static void setComp_cli(String comp_cli) {
-        utilsCadastro_cliente.comp_cli = comp_cli;
+    public static void setUcomp_cli(String ucomp_cli) {
+        utilsCadastro_cliente.ucomp_cli = ucomp_cli;
     }
 
-    public static String getEmail_cli() {
-        return email_cli;
+    public static String getUemail_cli() {
+        return uemail_cli;
     }
 
-    public static void setEmail_cli(String email_cli) {
-        utilsCadastro_cliente.email_cli = email_cli;
+    public static void setUemail_cli(String uemail_cli) {
+        utilsCadastro_cliente.uemail_cli = uemail_cli;
     }
 
-    public static String getDtnasc_cli() {
-        return dtnasc_cli;
+    public static String getUdtnasc_cli() {
+        return udtnasc_cli;
     }
 
-    public static void setDtnasc_cli(String dtnasc_cli) {
-        utilsCadastro_cliente.dtnasc_cli = dtnasc_cli;
+    public static void setUdtnasc_cli(String udtnasc_cli) {
+        utilsCadastro_cliente.udtnasc_cli = udtnasc_cli;
     }
 
-    public static String getGen_cli() {
-        return gen_cli;
+    public static String getUgen_cli() {
+        return ugen_cli;
     }
 
-    public static void setGen_cli(String gen_cli) {
-        utilsCadastro_cliente.gen_cli = gen_cli;
+    public static void setUgen_cli(String ugen_cli) {
+        utilsCadastro_cliente.ugen_cli = ugen_cli;
     }
 }

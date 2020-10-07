@@ -2,6 +2,7 @@ package com.example.casadoacaitcc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,23 +33,22 @@ public class Cadastro3 extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btnCad3:
                 conectarBD cad = new conectarBD(this);
 
                 cadastro_cliente clienteTela = new cadastro_cliente();
 
-                clienteTela.setNome_cli(utilsCadastro_cliente.getNome_cli());
-                clienteTela.setEmail_cli(utilsCadastro_cliente.getEmail_cli());
-                clienteTela.setSenha_cli(utilsCadastro_cliente.getSenha_cli());
-                clienteTela.setDtnasc_cli(utilsCadastro_cliente.getDtnasc_cli());
-                clienteTela.setCpf_cli(utilsCadastro_cliente.getCpf_cli());
-                clienteTela.setTel_cli(utilsCadastro_cliente.getTel_cli());
-                clienteTela.setGen_cli(utilsCadastro_cliente.getGen_cli());
+                clienteTela.setNome_cli(utilsCadastro_cliente.getUnome_cli());
+                clienteTela.setEmail_cli(utilsCadastro_cliente.getUemail_cli());
+                clienteTela.setSenha_cli(utilsCadastro_cliente.getUsenha_cli());
+                clienteTela.setDtnasc_cli(utilsCadastro_cliente.getUdtnasc_cli());
+                clienteTela.setCpf_cli(utilsCadastro_cliente.getUcpf_cli());
+                clienteTela.setTel_cli(utilsCadastro_cliente.getUtel_cli());
+                clienteTela.setGen_cli(utilsCadastro_cliente.getUgen_cli());
                 clienteTela.setCep_cli(txtCEP.getText().toString());
                 clienteTela.setNum_cli(txtNumero.getText().toString());
-                clienteTela.setDtnasc_cli(txtComplemento.getText().toString());
-
+                clienteTela.setComp_cli(txtComplemento.getText().toString());
 
 
                 cad.setClasseCli(clienteTela);
@@ -56,6 +56,7 @@ public class Cadastro3 extends AppCompatActivity implements View.OnClickListener
                 cad.execute(0);
 
                 break;
+
         }
     }
 }
