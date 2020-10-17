@@ -50,7 +50,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     logar.execute(1).get();
 
                     if(logar.getLogin() == true){
-                        Intent telaLogin = new Intent(this, MainActivity.class);
+                        Intent telaLogin = new Intent(this, MenuProdutos.class);
                         startActivity(telaLogin);
                     }else{
                         telaCliente = new cadastro_cliente();
