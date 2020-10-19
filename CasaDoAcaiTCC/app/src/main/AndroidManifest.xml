@@ -11,13 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main_nav_drawer"></activity>
+        <activity android:name=".ComprarAcai3"></activity>
+        <activity android:name=".ComprarAcai2" />
+        <activity android:name=".ComprarAcai1" />
+        <activity android:name=".main_nav_drawer" />
         <activity android:name=".RelatarProblema" />
         <activity android:name=".SobreApp" />
         <activity android:name=".Historico" />
         <activity android:name=".Favoritos" />
         <activity android:name=".Perfil" />
-        <activity android:name=".Header" />
         <activity android:name=".MenuProdutos" />
         <activity android:name=".Cadastro1" />
         <activity android:name=".Cadastro3" />

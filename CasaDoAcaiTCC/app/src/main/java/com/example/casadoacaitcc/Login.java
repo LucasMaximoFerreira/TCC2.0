@@ -12,6 +12,7 @@ import java.util.concurrent.ExecutionException;
 
 import dao.conectarBD;
 import model.cadastro_cliente;
+import utils.utilsCadastro_cliente;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
@@ -44,7 +45,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     conectarBD logar = new conectarBD(this);
                     telaCliente.setCpf_cli(txtLogin.getText().toString());
                     telaCliente.setSenha_cli(txtSenha.getText().toString());
-
+                    utilsCadastro_cliente.setCpfPesq(txtLogin.getText().toString());
                     logar.setClasseCli(telaCliente);
 
                     logar.execute(1).get();

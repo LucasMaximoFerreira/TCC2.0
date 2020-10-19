@@ -7,21 +7,89 @@
     android:id="@+id/drawer_layout"
     tools:context=".MenuProdutos">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <include
-            layout="@layout/main_toolbar"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Home"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
 
-    </LinearLayout>
+        <include
+            android:id="@+id/include3"
+            layout="@layout/main_toolbar" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="156dp"
+            android:layout_height="136dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toEndOf="@+id/imageButton6"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton5"
+            app:layout_constraintVertical_bias="0.338"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="156dp"
+            android:layout_height="136dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageButton5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.847"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include3"
+            app:layout_constraintVertical_bias="0.664"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ImageButton
+            android:id="@+id/btnAcai"
+            android:layout_width="156dp"
+            android:layout_height="136dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include3"
+            app:layout_constraintVertical_bias="0.664"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="156dp"
+            android:layout_height="136dp"
+            android:layout_marginTop="176dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include3"
+            app:layout_constraintVertical_bias="0.275"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="156dp"
+            android:layout_height="136dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.847"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include3"
+            app:layout_constraintVertical_bias="0.512"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="156dp"
+            android:layout_height="136dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.141"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+            app:layout_constraintVertical_bias="0.338"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
         android:layout_width="300dp"

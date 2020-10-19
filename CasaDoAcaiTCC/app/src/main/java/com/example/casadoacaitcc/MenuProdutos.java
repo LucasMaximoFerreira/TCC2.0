@@ -11,20 +11,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MenuProdutos extends AppCompatActivity{
+public class MenuProdutos extends AppCompatActivity implements View.OnClickListener {
 
+    ImageButton btnAcai;
     DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_produtos);
-
+        btnAcai = findViewById(R.id.btnAcai);
         drawerLayout = findViewById(R.id.drawer_layout);
+
+        btnAcai.setOnClickListener(this);
     }
 
     public void ClickMenu(View view) {
@@ -32,7 +36,7 @@ public class MenuProdutos extends AppCompatActivity{
         openDrawer(drawerLayout);
     }
 
-    private void openDrawer(DrawerLayout drawerLayout) {
+    public static void openDrawer(DrawerLayout drawerLayout) {
         //Abrir o layout do Drawer
         drawerLayout.openDrawer(GravityCompat.START);
     }
@@ -42,7 +46,7 @@ public class MenuProdutos extends AppCompatActivity{
         closeDrawer(drawerLayout);
     }
 
-    private void closeDrawer(DrawerLayout drawerLayout) {
+    public static void closeDrawer(DrawerLayout drawerLayout) {
         //Fechar o layout do Drawer
         //Verificar condição
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -54,8 +58,8 @@ public class MenuProdutos extends AppCompatActivity{
 
     ///////////////////////////////////////////////////////
     public void ClickMenuProdutos(View view) {
-        //Recriar tela
-        recreate();
+        Intent MenuProd = new Intent(this, MenuProdutos.class);
+        startActivity(MenuProd);
     }
 
     public void ClickPerfil(View view) {
@@ -81,6 +85,16 @@ public class MenuProdutos extends AppCompatActivity{
     public void ClickRelatar(View view) {
         Intent perfil = new Intent(this, RelatarProblema.class);
         startActivity(perfil);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnAcai:
+                Intent perfil = new Intent(this, ComprarAcai1.class);
+                startActivity(perfil);
+                break;
+        }
     }
 
     ///////////////////////////////////////////////////////

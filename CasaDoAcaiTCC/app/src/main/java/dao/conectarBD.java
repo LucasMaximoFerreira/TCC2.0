@@ -100,6 +100,12 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
             case 1:
                 resp = logar();
                 break;
+            case 2:
+                resp = pesquisarPerfil();
+                break;
+            case 3:
+                resp = alterar();
+                break;
         }
 
         return resp;
@@ -132,7 +138,13 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
                     Toast.makeText(tela, "usuario cadastrado", Toast.LENGTH_SHORT).show();
 
                 }
-
+                break;
+            case 3:
+                if (aBoolean == true) {
+                    Toast.makeText(tela, "Informações alteradas com sucesso", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(tela, "erro na alteração - verifique as informações", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
 
@@ -197,4 +209,62 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
         }
 
     }
+    private Boolean pesquisarPerfil() {
+
+        try {
+
+            String sql = "select nome_cli, senha_cli, email_cli, cep_cli, num_cli, comp_cli, tel_cli, gen_cli from cadastro_cliente where cpf_cli=?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setString(1, classeCli.getCpf_cli());
+            ResultSet tabelamemoria = comando.executeQuery();
+
+            if (tabelamemoria.next()) {
+                classeCli.setNome_cli(tabelamemoria.getString("nome_cli"));
+                classeCli.setSenha_cli(tabelamemoria.getString("senha_cli"));
+                classeCli.setEmail_cli(tabelamemoria.getString("email_cli"));
+                classeCli.setCep_cli(tabelamemoria.getString("cep_cli"));
+                classeCli.setNum_cli(tabelamemoria.getString("num_cli"));
+                classeCli.setComp_cli(tabelamemoria.getString("comp_cli"));
+                classeCli.setTel_cli(tabelamemoria.getString("tel_cli"));
+                classeCli.setGen_cli(tabelamemoria.getString("gen_cli"));
+                return true;
+
+            } else {
+                classeCli = null;
+
+                return false;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public Boolean alterar() {
+        try {
+
+
+            String sql = "update cadastro_cliente set nome_cli=?, senha_cli=?, email_cli=?, " +
+                    "cep_cli=?, num_cli=?, comp_cli=?, tel_cli=?, gen_cli=? where cpf_cli=?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setString(1, classeCli.getNome_cli());
+            comando.setString(2, classeCli.getSenha_cli());
+            comando.setString(3, classeCli.getEmail_cli());
+            comando.setString(4, classeCli.getCep_cli());
+            comando.setString(5, classeCli.getNum_cli());
+            comando.setString(6, classeCli.getComp_cli());
+            comando.setString(7, classeCli.getTel_cli());
+            comando.setString(8, classeCli.getGen_cli());
+            comando.setString(9, classeCli.getCpf_cli());
+
+            comando.executeUpdate();
+
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
 }
