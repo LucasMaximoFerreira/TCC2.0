@@ -158,13 +158,13 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
                 int genEscolhido = rgNovoGen.getCheckedRadioButtonId();
                 switch (genEscolhido){
                     case R.id.rbNovoMasculino:
-                        cliTela.setGen_cli("Masculino");
+                        cliTela.setGen_cli("M");
                         break;
                     case R.id.rbNovoFeminino:
-                        cliTela.setGen_cli("Feminino");
+                        cliTela.setGen_cli("F");
                         break;
                     case R.id.rbNovoPND:
-                        cliTela.setGen_cli("Prefiro nao Dizer");
+                        cliTela.setGen_cli("PND");
                         break;
                 }
 

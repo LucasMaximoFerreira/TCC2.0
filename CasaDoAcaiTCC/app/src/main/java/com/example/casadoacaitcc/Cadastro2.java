@@ -46,13 +46,13 @@ public class Cadastro2 extends AppCompatActivity implements View.OnClickListener
                 int opGen = rgGen.getCheckedRadioButtonId();
                 switch (opGen) {
                     case R.id.rbMasculino:
-                        utilsCadastro_cliente.setUgen_cli("Masculino");
+                        utilsCadastro_cliente.setUgen_cli("M");
                         break;
                     case R.id.rbFeminino:
-                        utilsCadastro_cliente.setUgen_cli("Feminino");
+                        utilsCadastro_cliente.setUgen_cli("F");
                         break;
                     case R.id.rbPND:
-                        utilsCadastro_cliente.setUgen_cli("Prefiro não dizer");
+                        utilsCadastro_cliente.setUgen_cli("PND");
                         break;
 
                 }
